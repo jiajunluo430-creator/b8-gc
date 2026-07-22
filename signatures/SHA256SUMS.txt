@@ -1,0 +1,17 @@
+# SHA256 checksums for signatures/ — two DIFFERENT kinds of hash, do not confuse them.
+#
+# (1) File-level SHA256 — a plain download/integrity check on the bytes of each file below.
+#     Verify with: grep -E '^[0-9a-f]{64}  ' SHA256SUMS.txt | sha256sum -c -
+73940faf6bdc974dd10632011de76b6dbdc55e164934c36e6ea1b09643e36f3c  signatures.json
+8d1642af74621860d6f0d85ae15231324ae62c1202dce55ff15ca3495f089fe9  SuppTable_S2_signatures.csv
+#
+# (2) Canonical semantic SHA256 — NOT a file hash. It is sha256(json.dumps(sigs,
+#     sort_keys=True, separators=(",", ":"))) over the {state: [30 genes]} dict
+#     loaded from signatures.json (see canonical_signature_payload() /
+#     signature_sha256() in pipeline/sig_utils.py). This is the value every
+#     downstream script checks against EXPECTED_SIGNATURE_SHA256 before scoring,
+#     so that pretty-printing, key order, or whitespace changes to signatures.json
+#     never silently change what "frozen signature" means.
+#
+#     Canonical semantic SHA256 (EXPECTED_SIGNATURE_SHA256 in pipeline/sig_utils.py):
+b522d543b269a86476499ee2955c35a90cdcd3bce68c9d3f5f9c3634f7377324

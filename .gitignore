@@ -1,0 +1,50 @@
+# Data and generated artifacts (not shipped in this release; user-supplied)
+data/
+work/
+h5ad/
+results/
+figures/
+*.h5ad
+*.h5
+*.loom
+*.rds
+*.RDS
+*.rdata
+*.RData
+*.mtx
+*.mtx.gz
+*.bam
+*.bai
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Archive bundles
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# Runtime outputs
+*.log
+*.tmp
+*.temp
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+.ipynb_checkpoints/
+.pytest_cache/
+examples/synthetic_demo/synthetic_demo_summary.csv
+
+# Local/editor state
+.env
+.venv/
+venv/
+.DS_Store
+.vscode/
+.idea/

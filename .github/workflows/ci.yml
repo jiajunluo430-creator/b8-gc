@@ -1,0 +1,41 @@
+name: release-ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-test.txt
+      - name: Install smoke-test dependencies
+        run: python -m pip install -r requirements-test.txt
+      - name: Static checks
+        run: |
+          python -m compileall -q pipeline tests examples
+          bash -n run_all.sh
+      - name: Pytest
+        run: python -m pytest -q
+
+  r-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.5.2"
+      - name: Parse R scripts
+        shell: Rscript {0}
+        run: |
+          files <- list.files("pipeline", pattern = "[.]R$", full.names = TRUE)
+          stopifnot(length(files) > 0)
+          invisible(lapply(files, parse))

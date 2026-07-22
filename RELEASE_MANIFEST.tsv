@@ -1,0 +1,59 @@
+path	role
+README.md	Top-level overview, install, workflow, framework explanation, data access
+LICENSE	MIT license for B8-GC contributors
+CITATION.cff	Schema-valid software and associated-manuscript citation metadata
+environment.yml	Exact linux-64 conda environment spec (Python 3.11.15 + pinned pip deps)
+requirements.txt	Pip-only equivalent of environment.yml's pip section (121 pinned packages)
+requirements-test.txt	Minimal pinned dependencies for pytest and the synthetic demonstration
+.gitattributes	Forces stable LF text checkout so published checksums remain portable
+.gitignore	Ignore patterns for data/work/scratch/cache artifacts
+run_all.sh	Canonical ordered re-run entrypoint for all included stages
+.github/workflows/ci.yml	GitHub Actions Python/Bash/R release checks
+docs/PROVENANCE.md	Lock commit, RMC->programme crosswalk, frozen values, retired/excluded analyses, prohibited claims
+docs/environment/R_sessionInfo.txt	R 4.4.1 session info used to generate manuscript results
+docs/environment/R_packages_used.csv	Curated R package/version list actually used by pipeline/*.R
+docs/environment/python_pip_freeze.txt	Full pip freeze (122 packages) of the analysis environment
+docs/environment/python_session_info.txt	Python/library version summary (private executable path stripped)
+signatures/signatures.json	Frozen M0/M1/M2 30-gene programme signatures (canonical JSON)
+signatures/SuppTable_S2_signatures.csv	Frozen M0/M1/M2 signatures as ranked table (state,rank,gene)
+signatures/SHA256SUMS.txt	File-level SHA256 for both files + canonical semantic hash explanation
+pipeline/config.py	Cohort manifest, QC params, verified sample-level route mapping, path resolution
+pipeline/sig_utils.py	Frozen signature loading, canonical-hash validation, EMT gene lists
+pipeline/fig_utils.py	Figure output directory/style helpers (B8GC_FIGDIR)
+pipeline/style.py	Shared plotting style constants
+pipeline/s0_qdp.py	Stage 0: per-cohort unified QC
+pipeline/s1_integrate.py	Stage 1: Harmony atlas integration across cohorts
+pipeline/build_h5ad.py	RDS-export intermediate -> .h5ad converter
+pipeline/export_rds.R	Seurat RDS -> flat-file export for build_h5ad.py
+pipeline/s2_malignant.py	Stage 2: per-sample CopyKAT malignant-cell bookkeeping (prep/collect)
+pipeline/s2_gse134520_breakdown.py	Stage 2: GSE134520-specific malignant breakdown
+pipeline/run_copykat.R	Per-sample CopyKAT R driver invoked by s2_malignant.py
+pipeline/s3_reproducibility_v2.py	Stage 3 (canonical): independent per-cohort clustering + MetaNeighbor raw-module (RMC) construction
+pipeline/run_metaneighbor.R	MetaNeighbor cross-cohort AUROC driver invoked by s3_reproducibility_v2.py
+pipeline/s3_5_characterize.py	Stage 3.5: RMC characterization from MetaNeighbor AUROC graph
+pipeline/s3_6_robustness.py	Stage 3.6: RMC robustness checks
+pipeline/freeze_signatures.py	Derives/validates the frozen M0/M1/M2 signatures from SuppTable_S2
+pipeline/s4_crossroute.py	Stage 4: all-cell frozen-signature projection, argmax state, diff_axis, route summaries
+pipeline/s4b_paired.py	Route/patient-paired summaries (HRA004702 same-patient route pairs)
+pipeline/s4c_inhouse_nodal.py	Optional in-house N+/N0 sample-level nodal summary
+pipeline/s5_spatial.py	Spatial (Visium) Moran's I analysis of diff_axis
+pipeline/s6_survival.py	Bulk survival negative-portability analysis (TCGA-STAD, GSE84437)
+pipeline/s6b_grade_adjust.py	Grade-adjusted bulk survival sensitivity analysis
+pipeline/s12_external_validation.py	Held-out external validation (GSE308231, GSE246662)
+pipeline/s12_gse239676_validation.py	Held-out external validation + route/paired analysis (GSE239676)
+pipeline/s13_mixed_model.py	Sample-level pooled OLS, fixed-effect meta-analysis, and LOCO validation models
+pipeline/s14_peritoneal_emt_diagnostic.py	EMT scoring diagnostic (non-discrete-state, non-metastasis-enriched)
+pipeline/export_fig6_jtm_source.py	Exports canonical Figure 6 source CSVs directly from Stage 12/13 outputs
+examples/synthetic_demo/README.md	Synthetic demo usage instructions
+examples/synthetic_demo/generate_synthetic_data.py	Generates fully synthetic AnnData (no real/patient data)
+examples/synthetic_demo/run_demo.py	Runs Stage-2 frozen-signature scoring end-to-end on the synthetic data
+tests/conftest.py	Adds pipeline/ to sys.path for test imports
+tests/test_signatures.py	Signature hash lock, gene-count, no-duplicate-gene smoke tests
+tests/test_denominator_bookkeeping.py	Synthetic retention-audit: 0 cells dropped Stage1->Stage2
+tests/test_source_table_schema.py	Schema checks for signature table + scored-cell table
+tests/test_route_mapping.py	Regression checks for verified sample-level GEO route assignments
+tests/test_loco_regression.py	Regression checks for locked fixed-effect and LOCO estimates
+tests/test_fig6_export.py	Figure 6 live-input exporter schema and legacy-dependency tests
+RELEASE_MANIFEST.tsv	This file
+QC_REPORT.md	Secrets/PII/path sweep results, smoke-test status
+SHA256SUMS.txt	SHA256 of every file in this release tree (computed last)

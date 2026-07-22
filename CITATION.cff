@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript."
+title: "B8-GC: reproducible analysis code for the gastric differentiation axis"
+type: software
+authors:
+  - family-names: "Luo"
+    given-names: "Jiajun"
+    affiliation: "Department of Gastrointestinal Surgery, The First Affiliated Hospital of Chongqing Medical University; Molecular Oncology Laboratory, The University of Chicago Medical Center"
+  - family-names: "Wang"
+    given-names: "Ziwei"
+    affiliation: "Department of Gastrointestinal Surgery, The First Affiliated Hospital of Chongqing Medical University"
+  - family-names: "Liang"
+    given-names: "Xiaolong"
+    affiliation: "Department of Gastrointestinal Surgery, The First Affiliated Hospital of Chongqing Medical University"
+repository-code: "https://github.com/jiajunluo430-creator/b8-gc"
+version: "1.0.0"
+date-released: "2026-07-22"
+license: MIT
+preferred-citation:
+  type: article
+  title: "A reproducible gastric differentiation axis marks metastatic dedifferentiation in gastric cancer"
+  authors:
+    - family-names: "Luo"
+      given-names: "Jiajun"
+    - family-names: "Wang"
+      given-names: "Ziwei"
+    - family-names: "Liang"
+      given-names: "Xiaolong"
+  year: 2026

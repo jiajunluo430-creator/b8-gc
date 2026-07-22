@@ -1,0 +1,10 @@
+Package,Version,Used by
+Seurat,5.1.0,export_rds.R
+SeuratObject,5.0.2,export_rds.R
+Matrix,1.7-0,export_rds.R;run_copykat.R
+copykat,1.1.0,run_copykat.R
+MetaNeighbor,1.24.0,run_metaneighbor.R
+SingleCellExperiment,1.26.0,run_metaneighbor.R
+SummarizedExperiment,1.34.0,run_metaneighbor.R
+dplyr,1.1.4,run_copykat.R;run_metaneighbor.R
+ggplot2,3.5.1,run_copykat.R (diagnostic plots)
