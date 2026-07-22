@@ -131,7 +131,7 @@ locked `LN_met` convention is retained with that caveat.
   Jiajun Luo, Ziwei Wang, and Xiaolong Liang.
 - The MIT notice names the same three authors as copyright holders.
 - The repository URL is `https://github.com/jiajunluo430-creator/b8-gc`.
-- The archival DOI will be added when the versioned deposit is created; no
-  placeholder DOI is represented as a real identifier.
+- The versioned Zenodo archive DOI is
+  `https://doi.org/10.5281/zenodo.21496971`.
 - The manuscript's final Data Availability statement remains the authority for
   the in-house cohort and must remain consistent with the neutral README wording.

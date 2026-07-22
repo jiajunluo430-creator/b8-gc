@@ -210,8 +210,9 @@ If you use this code, cite the associated manuscript:
 
 Repository: https://github.com/jiajunluo430-creator/b8-gc
 
-The archival DOI will be added after the versioned release is deposited. The
-root `CITATION.cff` supplies machine-readable citation metadata to GitHub.
+Archived release: https://doi.org/10.5281/zenodo.21496971
+
+The root `CITATION.cff` supplies machine-readable citation metadata to GitHub.
 
 ## Repository layout
 

@@ -13,6 +13,7 @@ authors:
     given-names: "Xiaolong"
     affiliation: "Department of Gastrointestinal Surgery, The First Affiliated Hospital of Chongqing Medical University"
 repository-code: "https://github.com/jiajunluo430-creator/b8-gc"
+doi: "10.5281/zenodo.21496971"
 version: "1.0.0"
 date-released: "2026-07-22"
 license: MIT
